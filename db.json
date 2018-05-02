@@ -1,0 +1,138 @@
+{
+  "getProductList": [
+    {
+      "title": "PC产品",
+      "list": [
+        {
+          "name": "数据统计",
+          "url": "http://starcraft.com"
+        },
+        {
+          "name": "数据预测",
+          "url": "http://warcraft.com"
+        },
+        {
+          "name": "流量分析",
+          "url": "http://overwatch.com",
+          "hot": true
+        },
+        {
+          "name": "广告发布",
+          "url": "http://hearstone.com"
+        }
+      ]
+    },
+   {
+      "title": "手机应用类",
+      "last": true,
+      "list": [
+        {
+          "name": "91助手",
+          "url": "http://weixin.com"
+        },
+        {
+          "name": "产品助手",
+          "url": "http://twitter.com",
+          "hot": true
+        },
+        {
+          "name": "智能地图",
+          "url": "http://maps.com"
+        },
+        {
+          "name": "团队语音",
+          "url": "http://phone.com"
+        }
+      ]
+    }
+  ],
+  "getNewsList": [
+    {
+      "id": 1,
+      "title": "DGX-2如何驱动智能监控革命？英伟达架构师4000字详解",
+      "url": "http://news.baidu.com/"
+    },
+    {
+      "id": 2,
+      "title": "小米上市前夕，雷军“卸磨杀驴”？",
+      "url": "http://news.baidu.com/"
+    },
+    {
+      "id": 3,
+      "title": "双摄和三摄差多少 华为P20&Pro差异揭秘",
+      "url": "http://news.baidu.com/"
+    },
+    {
+      "id": 4,
+      "title": "水晶光电：暂未考虑进入芯片行业",
+      "url": "http://news.baidu.com/"
+    }
+  ],
+  "getBoardList": [
+    {
+      "title": "数据统计",
+      "description": "历史资料、科学实验、检验、统计",
+      "id": "car",
+      "toKey": "analysis"
+    },
+    {
+      "title": "数据预测",
+      "description": "未来，大数据会变得越来越重要",
+      "id": "earth",
+      "toKey": "count"
+    },
+    {
+      "title": "流量分析",
+      "description": "对有关数据进行统计、分析，从中发现用户访问网站的规律",
+      "id": "loud",
+      "toKey": "forecast"
+    },
+    {
+      "title": "广告发布",
+      "description": "专门负责与有关媒介单位接洽，安排有关广告的发播事宜，并对发播质量实施监督",
+      "id": "hill",
+      "toKey": "publish"
+    }
+  ],
+  "login": {
+    "username": "Bomzu@",
+    "userId": 123123
+  },
+  "getPrice": {
+    "amount": 678
+  },
+  "createOrder": {
+    "orderId": "6djk979"
+  },
+  "getOrderList": {
+    "list": [
+      {
+        "orderId": "6djk979",
+        "product": "数据统计",
+        "version": "高级版",
+        "period": "1年",
+        "buyNum": 2,
+        "date": "2018-1-10",
+        "amount": "500元"
+      },
+      {
+        "orderId": "yuj583",
+        "product": "流量分析",
+        "version": "户外版",
+        "period": "3个月",
+        "buyNum": 1,
+        "date": "2018-3-2",
+        "amount": "2200元"
+      },
+      {
+        "orderId": "pmd201",
+        "product": "广告发布",
+        "version": "商铺版",
+        "period": "3年",
+        "buyNum": 12,
+        "date": "2018-4-3",
+        "amount": "7890元"
+      }
+    ]
+  }
+}
