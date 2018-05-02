@@ -1,4 +1,4 @@
-# dsmod
+# shop
 
 > A Vue.js project
 
