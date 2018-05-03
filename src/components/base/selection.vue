@@ -1,6 +1,6 @@
 <template>
   <div class="selection-component">
-    <div class="selection-show" @click="toggleDrop()">
+    <div class="selection-show" @click.stop="toggleDrop()">
       <span>{{ this.selections[nowIndex].label }}</span>
       <div class="arrow"></div>
     </div>
@@ -29,8 +29,6 @@ export default {
   },
   methods: {
     toggleDrop () {
-      const e = window.event || window.evt
-      e.stopPropagation()
       this.isDrop = !this.isDrop
     },
     chooseSelection (index) {

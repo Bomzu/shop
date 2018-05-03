@@ -102,16 +102,21 @@ export default {
         }
       ],
       currentOrder: 'asc'
+      // tableData: []
     }
   },
   computed: {
     tableData () {
-      return this.$store.getters.getOrderList
+        return this.$store.getters.getOrderList
     }
   },
   watch: {
     query () {
-      this.getList()
+      this.$store.commit('updateParams', {
+        key: 'query',
+        val: this.query
+      })
+      this.$store.dispatch('fetchOrderList')
     }
   },
   methods: {
@@ -142,7 +147,7 @@ export default {
       /* this.endDate = date
       this.getList() */
     },
-    getList () {
+    /* getList () {
       let reqParams = {
         query: this.query,
         productId: this.productId,
@@ -155,7 +160,7 @@ export default {
       }, (err) => {
         console.log(err)
       })
-    },
+    }, */
     changeOrderType (headItem) {
       this.tableHeads.map((item) => {
         item.active = false
@@ -167,11 +172,10 @@ export default {
       } else if (this.currentOrder === 'desc') {
         this.currentOrder = 'asc'
       }
-      this.tableData = _.orderBy(this.tableData, headItem.key, this.currentOrder)
+      this.$store.commit('updateOrderList', _.orderBy(this.$store.getters.getOrderList, headItem.key, this.currentOrder))
     }
   },
   mounted () {
-    // this.getList()
     this.$store.dispatch('fetchOrderList')
   }
 }
