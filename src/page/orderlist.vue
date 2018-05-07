@@ -120,48 +120,23 @@ export default {
     }
   },
   methods: {
-    productChange (obj) {
+    productChange (obj) { // 商品类型
+      this.subActionsFun('productId', obj.key)
+    },
+    getStartDate (date) { // 开始日期
+      this.subActionsFun('startDate', date)
+    },
+    getEndDate (date) { // 结束日期
+      this.subActionsFun('endDate', date)
+    },
+    subActionsFun (key, val) { // 请求获取商品列表
       this.$store.commit('updateParams', {
-        key: 'productId',
-        val: obj.key
+        key: key,
+        val: val
       })
       this.$store.dispatch('fetchOrderList')
-      /* this.productId = obj.key
-      this.getList() */
     },
-    getStartDate (date) {
-      this.$store.commit('updateParams', {
-        key: 'startDate',
-        val: date
-      })
-      this.$store.dispatch('fetchOrderList')
-      /* this.startDate = date
-      this.getList() */
-    },
-    getEndDate (date) {
-      this.$store.commit('updateParams', {
-        key: 'endDate',
-        val: date
-      })
-      this.$store.dispatch('fetchOrderList')
-      /* this.endDate = date
-      this.getList() */
-    },
-    /* getList () {
-      let reqParams = {
-        query: this.query,
-        productId: this.productId,
-        startDate: this.startDate,
-        endDate: this.endDate
-      }
-      this.$http.post('/api/getOrderList', reqParams)
-      .then((res) => {
-        this.tableData = res.data.list
-      }, (err) => {
-        console.log(err)
-      })
-    }, */
-    changeOrderType (headItem) {
+    changeOrderType (headItem) { // 排序
       this.tableHeads.map((item) => {
         item.active = false
         return item
@@ -176,6 +151,7 @@ export default {
     }
   },
   mounted () {
+    // 获取商品列表
     this.$store.dispatch('fetchOrderList')
   }
 }
